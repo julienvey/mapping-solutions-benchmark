@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+  <mapping>
+    <class-a>com.julienvey.mapping.benchmark.domainA.ObjectSecondLevelA</class-a>
+    <class-b>com.julienvey.mapping.benchmark.domaineB.ObjectSecondLevelB</class-b>
+    <field custom-converter="com.julienvey.mapping.benchmark.mapper.dozer.converter.DateToStringWithYearConverter">
+      <a>dateDeclaration</a>
+      <b>exDeclaration</b>
+    </field>
+    <field>
+      <a>dateDeclaration</a>
+      <b>dateDeclaration</b>
+    </field>
+  </mapping>
+
+
+</mappings>

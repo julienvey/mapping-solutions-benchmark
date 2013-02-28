@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config />
+
+  <context:component-scan base-package="com.julienvey.mapping.benchmark.mapper.orika" />
+
+  <bean id="org.dozer.Mapper" class="org.dozer.DozerBeanMapper">
+    <property name="mappingFiles">
+      <list>
+        <value>com/julienvey/mapping/benchmark/mapper/dozer/customConverterDozerMapping.xml</value>
+        <value>com/julienvey/mapping/benchmark/mapper/dozer/dossierSinistreDozerMapping.xml</value>
+      </list>
+    </property>
+  </bean>
+
+
+</beans>
