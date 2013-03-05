@@ -12,6 +12,8 @@ public class ObjectFirstLevelB {
 
     protected Integer nombreSinistresInactifs = 0;
 
+    public String fakeValue;
+
     protected boolean isReponsePartielle = false;
 
     protected List<ObjectSecondLevelB> sinitres = new ArrayList<ObjectSecondLevelB>();
@@ -54,5 +56,13 @@ public class ObjectFirstLevelB {
 
     public void setSinitres(List<ObjectSecondLevelB> sinitres) {
         this.sinitres = sinitres;
+    }
+
+    public String getFakeValue() {
+        return fakeValue;
+    }
+
+    public void setFakeValue(String fakeValue) {
+        this.fakeValue = fakeValue;
     }
 }

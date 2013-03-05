@@ -29,6 +29,8 @@ public class ObjectFirstLevelMapperTest {
         assertThat(dossierSinistreDto).isNotNull();
 
         ObjectFirstLevelUtils.assertEquals(dossierSinistreAcl, dossierSinistreDto);
+        System.out.println(dossierSinistreDto.fakeValue);
+
     }
 
     public void test_Apply_Reverse() {

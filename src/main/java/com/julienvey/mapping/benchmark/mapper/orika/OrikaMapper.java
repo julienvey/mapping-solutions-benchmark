@@ -2,7 +2,9 @@ package com.julienvey.mapping.benchmark.mapper.orika;
 
 import org.springframework.stereotype.Component;
 
+import com.julienvey.mapping.benchmark.domainA.ObjectFirstLevelA;
 import com.julienvey.mapping.benchmark.domainA.ObjectSecondLevelA;
+import com.julienvey.mapping.benchmark.domaineB.ObjectFirstLevelB;
 import com.julienvey.mapping.benchmark.domaineB.ObjectSecondLevelB;
 import com.julienvey.mapping.benchmark.mapper.orika.converter.CustomDateToDateConverter;
 import com.julienvey.mapping.benchmark.mapper.orika.converter.DateToStringWithYearConverter;
@@ -21,6 +23,8 @@ public class OrikaMapper {
 
         mapperFactory.getConverterFactory().registerConverter(new CustomDateToDateConverter());
         mapperFactory.getConverterFactory().registerConverter("DateToStringWithYearConverter", new DateToStringWithYearConverter());
+
+        mapperFactory.classMap(ObjectFirstLevelA.class, ObjectFirstLevelB.class).field("sinitres[0].roles[0].prenom", "fakeValue").byDefault().register();
 
         mapperFactory.classMap(ObjectSecondLevelA.class, ObjectSecondLevelB.class)
                         .field("dateDeclaration", "dateDeclaration")
